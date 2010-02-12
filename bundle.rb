@@ -1,9 +1,10 @@
 require 'ruble'
 
 bundle 'RSpec' do |bundle|
-  bundle.author = 'David Chelimsky'
-  bundle.description = "RSpec RadRails bundle"
-  bundle.repository= "git@github.com:aptana/rspec.ruble.git"
+  bundle.author = 'Christopher Williams'
+  bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
+  bundle.description = "Ported from David Chelimsky's RSpec bundle for TextMate."
+  bundle.repository= "git://github.com/aptana/rspec.ruble.git"
   bundle.associate_scope("*spec.rb", "source.ruby.rspec")
 
   bundle.menu 'RSpec' do |main_menu|
