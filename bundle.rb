@@ -5,7 +5,7 @@ bundle 'RSpec' do |bundle|
   bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
   bundle.description = "Ported from David Chelimsky's RSpec bundle for TextMate."
   bundle.repository= "git://github.com/aptana/rspec.ruble.git"
-  bundle.associate_scope("*spec.rb", "source.ruby.rspec")
+  bundle.file_types['source.ruby.rspec'] = "*spec.rb"
 
   bundle.menu 'RSpec' do |main_menu|
     #main_menu.command 'B40994F6-681A-458A-ACEC-3A5DC8F22ECA'
