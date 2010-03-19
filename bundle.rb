@@ -1,8 +1,9 @@
 require 'ruble'
 
-bundle 'RSpec' do |bundle|
+bundle do |bundle|
   bundle.author = 'Christopher Williams'
   bundle.copyright = "© Copyright 2010 Aptana Inc. Distributed under the MIT license."
+  bundle.display_name = 'RSpec'
   bundle.description = "Ported from David Chelimsky's RSpec bundle for TextMate."
   bundle.repository= "git://github.com/aptana/rspec.ruble.git"
   bundle.file_types['source.ruby.rspec'] = "*spec.rb"
