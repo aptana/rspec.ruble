@@ -19,7 +19,7 @@ bundle do |bundle|
     main_menu.command 'Run Single Example'
     main_menu.command 'Run Examples'
     #main_menu.command '5A91762E-213B-4F29-9F6B-147B7964313B'
-    main_menu.command 'Run Examples in selected files/directories'
+    # main_menu.command 'Run Examples in selected files/directories'
     main_menu.separator
     main_menu.menu 'Expectations' do |submenu|
       submenu.menu 'General' do |general|
@@ -138,9 +138,9 @@ bundle do |bundle|
     main_menu.command 'should_not predicate'
     main_menu.command 'mock_model'
     main_menu.command 'stub'
-    main_menu.command 'Save Example file and remember'
-    main_menu.command 'Run Last Examples file'
-    main_menu.command 'Alternate File'
-    main_menu.command 'Update RSpec bundle'
+    # main_menu.command 'Save Example file and remember'
+    # main_menu.command 'Run Last Examples file'
+    # main_menu.command 'Alternate File'
+    # main_menu.command 'Update RSpec bundle'
   end
 end
