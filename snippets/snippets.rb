@@ -1,3 +1,5 @@
+require 'ruble'
+
 with_defaults :scope => 'source.ruby.rspec' do |bundle|
 snippet 'and_raise' do |s|
   s.trigger = 'anr'
