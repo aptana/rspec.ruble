@@ -1,3 +1,5 @@
+require 'tmpdir'
+
 module Spec
   module Mate
     class Runner
@@ -45,7 +47,7 @@ module Spec
       end
 
       def last_remembered_file_cache
-        "/tmp/textmate_rspec_last_remembered_file_cache.txt"
+        Dir.tmpdir + "/textmate_rspec_last_remembered_file_cache.txt"
       end
       
       protected
