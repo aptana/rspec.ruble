@@ -140,7 +140,7 @@ bundle do |bundle|
     main_menu.command 'stub'
     main_menu.command 'Save Example file and remember'
     main_menu.command 'Run Last Examples file'
-    # main_menu.command 'Alternate File'
+    main_menu.command 'Alternate File'
     # main_menu.command 'Update RSpec bundle'
   end
 end

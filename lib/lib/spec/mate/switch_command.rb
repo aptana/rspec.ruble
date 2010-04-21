@@ -1,3 +1,19 @@
+require 'ruble/editor'
+require 'ruble/ui'
+require 'fileutils'
+
+class ElementNameFilter
+    include com.aptana.scripting.model.filters.IModelFilter
+    
+    def initialize(name)
+      @name = name
+    end
+    
+    def include(element)
+      element.display_name == @name
+    end
+end
+
 module Spec
   module Mate
     # This is based on Ruy Asan's initial code:
@@ -6,7 +22,7 @@ module Spec
       def go_to_twin(project_directory, filepath)
         other = twin(filepath)
         if File.file?(other)
-          %x{ "$TM_SUPPORT_PATH/bin/mate" "#{other}" }
+          Ruble::Editor.open(other)
         else
           relative = other[project_directory.length+1..-1]
           file_type = file_type(other)
@@ -78,8 +94,8 @@ module Spec
       end
       
       def create?(relative_twin, file_type)
-        answer = `'#{ ENV['TM_SUPPORT_PATH'] }/bin/CocoaDialog.app/Contents/MacOS/CocoaDialog' yesno-msgbox --no-cancel --icon document --informative-text "#{relative_twin}" --text "Create missing #{file_type}?"`
-        answer.to_s.chomp == "1"
+        answer = Ruble::UI.alert(:info, relative_twin, "Create missing #{file_type}?", "No", "Yes")
+        answer.to_s == "Yes"
       end
 
       def content_for(file_type, relative_path)
@@ -119,16 +135,18 @@ HELPER
       
       # Extracts the snippet text
       def snippet(snippet_name)
-        snippet_file = File.expand_path(File.dirname(__FILE__) + "/../../../../Snippets/#{snippet_name}")
-        xml = File.open(snippet_file).read
-        xml.match(/<key>content<\/key>\s*<string>([^<]*)<\/string>/m)[1]
+        manager = Ruble::BundleManager.manager
+        # filter = com.aptana.scripting.model.filters.AndFilter.new([com.aptana.scripting.model.filters.HasTriggerFilter.new, ElementNameFilter.new(snippet_name)])
+        filter = ElementNameFilter.new(snippet_name)
+        snippets = manager.getCommands(filter)
+        snippets.first.expansion
       end
       
       def spec(path)
         content = <<-SPEC
 require 'spec_helper'
 
-#{snippet("Describe_type.tmSnippet")}
+#{snippet("describe (type)")}
 SPEC
       end
 
@@ -153,12 +171,11 @@ SPEC
       end
       
       def write_and_open(path, content)
-        `mkdir -p "#{File.dirname(path)}"`
-        `touch "#{path}"`
-        `"$TM_SUPPORT_PATH/bin/mate" "#{path}"`
-        `osascript &>/dev/null -e 'tell app "SystemUIServer" to activate' -e 'tell app "TextMate" to activate'`
-        escaped_content = content.gsub("\n","\\n").gsub('$','\\$').gsub('"','\\\\\\\\\\\\"')
-        `osascript &>/dev/null -e "tell app \\"TextMate\\" to insert \\"#{escaped_content}\\" as snippet true"`      
+        FileUtils.mkdir_p(File.dirname(path))
+        FileUtils.touch(path)
+        Ruble::Editor.open(path)
+        escaped_content = content.gsub('"','\\\\\\\\\\\\"')
+        Ruble::Editor.active.insert_as_snippet(escaped_content)     
       end
     end
   end
