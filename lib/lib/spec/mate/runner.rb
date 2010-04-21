@@ -1,4 +1,5 @@
 require 'tmpdir'
+require 'ruble/terminal'
 
 module Spec
   module Mate
@@ -28,16 +29,12 @@ module Spec
 
       def run(stdout, options)
         argv = options[:files].dup
-        argv << '--format'
-        argv << 'textmate'
         if options[:line]
-          argv << '--line'
+          argv << ' --line '
           argv << options[:line]
         end
         argv += ENV['TM_RSPEC_OPTS'].split(" ") if ENV['TM_RSPEC_OPTS']
-        Dir.chdir(project_directory) do
-          ::Spec::Runner::CommandLine.run(::Spec::Runner::OptionParser.parse(argv, STDERR, stdout))
-        end
+        Ruble::Terminal.open("spec \"#{argv}\"", project_directory) 
       end
       
       def save_as_last_remembered_file(file)
