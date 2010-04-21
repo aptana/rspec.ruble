@@ -1,14 +1,22 @@
 require 'tmpdir'
 require 'ruble/terminal'
+require 'rbconfig'
 
 module Spec
   module Mate
     class Runner
+      if RbConfig::CONFIG['target_os'] =~ /(win|w)32$/
+        SPEC_BIN = "spec"
+      else  
+        SPEC_BIN = %x{which spec}.chomp
+      end
+      
       def run_files(stdout, options={})
         files = ENV['TM_SELECTED_FILES'].scan(/'(.*?)'/).flatten.map do |path|
-          File.expand_path(path)
+          "\"" + File.expand_path(path) + "\" "
         end
-        options.merge!({:files => files})
+        
+        options.merge!({:files => files, :multiple => true})
         run(stdout, options)
       end
 
@@ -30,11 +38,13 @@ module Spec
       def run(stdout, options)
         argv = options[:files].dup
         if options[:line]
-          argv << ' --line '
-          argv << options[:line]
+          lines = "--line #{options[:line]}"
+        elsif options[:multiple]
+          Ruble::Terminal.open("#{SPEC_BIN} #{argv}", project_directory)
+          return
         end
         argv += ENV['TM_RSPEC_OPTS'].split(" ") if ENV['TM_RSPEC_OPTS']
-        Ruble::Terminal.open("spec \"#{argv}\"", project_directory) 
+        Ruble::Terminal.open("#{SPEC_BIN} \"#{argv}\" #{lines if lines}", project_directory) 
       end
       
       def save_as_last_remembered_file(file)
