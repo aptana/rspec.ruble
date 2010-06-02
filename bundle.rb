@@ -122,7 +122,7 @@ bundle do |bundle|
     end
     main_menu.command 'configure'
     main_menu.command 'describe (String)'
-    main_menu.command 'descripe (type)'
+    main_menu.command 'describe (type)'
     main_menu.command 'describe (type, string)'
     main_menu.command 'context'
     main_menu.command 'it (does something)'

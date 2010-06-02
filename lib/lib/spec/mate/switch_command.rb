@@ -134,7 +134,7 @@ HELPER
       end
       
       # Extracts the snippet text
-      def snippet(snippet_name)
+      def expand_snippet(snippet_name)
         manager = Ruble::BundleManager.manager
         # filter = com.aptana.scripting.model.filters.AndFilter.new([com.aptana.scripting.model.filters.HasTriggerFilter.new, ElementNameFilter.new(snippet_name)])
         filter = ElementNameFilter.new(snippet_name)
@@ -146,7 +146,7 @@ HELPER
         content = <<-SPEC
 require 'spec_helper'
 
-#{snippet("describe (type)")}
+#{expand_snippet("describe (type)")}
 SPEC
       end
 
