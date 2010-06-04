@@ -10,7 +10,7 @@ bundle do |bundle|
 
   bundle.menu 'RSpec' do |main_menu|
     #main_menu.command 'B40994F6-681A-458A-ACEC-3A5DC8F22ECA'
-    main_menu.separator
+    #main_menu.separator
     #main_menu.command '1AEC727D-CE27-4A36-AD41-F76C843DAC2B'
     #main_menu.command '5D73F8D8-386A-4030-AB46-95F92E42E7B8'
     main_menu.command 'before'
