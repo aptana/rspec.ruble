@@ -654,6 +654,7 @@ children:
   async: false
   customProperties: null
   displayName: Alternate File
+  input: [none]
   inputPath: null
   keyBindingMap:
     !!com.aptana.scripting.model.Platform 'ALL': [CONTROL+M2+ARROW_DOWN]
@@ -667,6 +668,7 @@ children:
   async: false
   customProperties: null
   displayName: Run Single Example
+  input: [selection, line]
   inputPath: null
   keyBindingMap:
     !!com.aptana.scripting.model.Platform 'ALL': [M1+M2+R]
@@ -680,6 +682,7 @@ children:
   async: false
   customProperties: null
   displayName: Run Last Examples file
+  input: [none, document]
   inputPath: null
   keyBindingMap:
     !!com.aptana.scripting.model.Platform 'ALL': [OPTION+COMMAND+R]
@@ -693,6 +696,7 @@ children:
   async: false
   customProperties: null
   displayName: Run Examples
+  input: [document, document]
   inputPath: null
   keyBindingMap:
     !!com.aptana.scripting.model.Platform 'ALL': [M1+R]
@@ -706,6 +710,7 @@ children:
   async: false
   customProperties: null
   displayName: Run Examples in selected files/directories
+  input: [none]
   inputPath: null
   keyBindingMap:
     !!com.aptana.scripting.model.Platform 'ALL': [OPTION+COMMAND+R]
@@ -720,6 +725,7 @@ children:
   customProperties:
     execution_listener_values: [org.eclipse.ui.file.save]
   displayName: Save Example file and remember
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -734,6 +740,7 @@ children:
     prefix_values: [anr]
   displayName: and_raise
   expansion: and_raise(${1:exception})
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -748,6 +755,7 @@ children:
     prefix_values: [anrb]
   displayName: and_return with block
   expansion: and_return { $1 }
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -762,6 +770,7 @@ children:
     prefix_values: [andra]
   displayName: and_return with args
   expansion: and_return(${1:value})
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -776,6 +785,7 @@ children:
     prefix_values: [ant]
   displayName: and_throw
   expansion: and_throw(${1:sym})
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -790,6 +800,7 @@ children:
     prefix_values: [any]
   displayName: and_yield
   expansion: and_yield(${1:values})
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -804,6 +815,7 @@ children:
     prefix_values: [annot]
   displayName: any_number_of_times
   expansion: any_number_of_times
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -818,6 +830,7 @@ children:
     prefix_values: [atl]
   displayName: at_least
   expansion: at_least(${1:n}).times
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -832,6 +845,7 @@ children:
     prefix_values: [atm]
   displayName: at_most
   expansion: at_most(${1:n}).times
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -846,6 +860,7 @@ children:
     prefix_values: [cnf]
   displayName: configure
   expansion: "Spec::Runner.configure do |config|\n  config.$0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -860,6 +875,7 @@ children:
     prefix_values: [con]
   displayName: context
   expansion: "context \"${1:context}\" do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -875,6 +891,7 @@ children:
   displayName: describe (Controller)
   expansion: "require File.expand_path(File.dirname(__FILE__) + '/../spec_helper')\n\
     \ndescribe ${1:controller} do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -890,6 +907,7 @@ children:
   displayName: describe (RESTful Controller)
   expansion: "describe ${1:controller}, \"${2:GET|POST|PUT|DELETE} ${3:/some/path}${4:\
     \ with some parameters}\" do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -904,6 +922,7 @@ children:
     prefix_values: [des]
   displayName: describe (String)
   expansion: "describe \"${1:subject}\" do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -918,6 +937,7 @@ children:
     prefix_values: [dest]
   displayName: describe (type)
   expansion: "describe ${1:Type} do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -932,6 +952,7 @@ children:
     prefix_values: [dests]
   displayName: describe (type, string)
   expansion: "describe ${1:Type}, \"${2:description}\" do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -946,6 +967,7 @@ children:
     prefix_values: [ex]
   displayName: exactly
   expansion: exactly(${1:n}).times
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -960,6 +982,7 @@ children:
     prefix_values: [its]
   displayName: it (should do something)
   expansion: "it \"should ${1:do something}\"${2: do\n  $0\nend}"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -974,6 +997,7 @@ children:
     prefix_values: [it]
   displayName: it (does something)
   expansion: "it \"${1:does something}\"${2: do\n  $0\nend}"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -994,6 +1018,7 @@ children:
     \ #{@actual.inspect} to $2 #{@$3.inspect}, but it didn't\"\n  end\n\n  def failure_message_for_should_not\n\
     \    \"expected #{@actual.inspect} not to $2 #{@$3.inspect}, but it did\"\n  end\n\
     end\n\ndef ${2:reverse_to}(${3:expected})\n  $1.new($3)\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1009,6 +1034,7 @@ children:
   displayName: Matcher (DSL)
   expansion: "Spec::Matchers.define :${1:name} do |${2:expected}|\n  match do |${3:actual}|\n\
     \    $3.$1?($2)\n  end\nend\n"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1025,6 +1051,7 @@ children:
   expansion: '${1:var} = mock("${2:mock_name}"${3:, :null_object => true})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1039,6 +1066,7 @@ children:
     prefix_values: [mm]
   displayName: mock_model
   expansion: mock_model(${1:model})$0
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1054,6 +1082,7 @@ children:
   displayName: mock_with
   expansion: "Spec::Runner.configure do |config|\n\tconfig.mock_with :${0:mocha|flexmock|rr}\n\
     end"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1068,6 +1097,7 @@ children:
     prefix_values: ['on']
   displayName: once
   expansion: once
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1085,6 +1115,7 @@ children:
 
 
     '
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1101,6 +1132,7 @@ children:
   expansion: 'response.should be_success
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1117,6 +1149,7 @@ children:
   expansion: 'response.should_not be_success
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1131,6 +1164,7 @@ children:
     prefix_values: [conn]
   displayName: controller_name
   expansion: controller_name :${1:controller}
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1145,6 +1179,7 @@ children:
     prefix_values: [bef]
   displayName: before
   expansion: "before(${1::each}) do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1161,6 +1196,7 @@ children:
   expansion: '${1:target}.should == ${2:value}
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1177,6 +1213,7 @@ children:
   expansion: '${1:target}.should =~ /${2:regexp}/
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1193,6 +1230,7 @@ children:
   expansion: '${1:target}.should eql(${2:value})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1209,6 +1247,7 @@ children:
   expansion: '${1:target}.should be(${2:result})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1225,6 +1264,7 @@ children:
   expansion: '${1:target}.should be_a_kind_of(${2:klass})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1241,6 +1281,7 @@ children:
   expansion: '${1:target}.should be_instance_of(${2:klass})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1257,6 +1298,7 @@ children:
   expansion: '${1:target}.should be_close(${2:result}, ${3:tolerance})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1273,6 +1315,7 @@ children:
   expansion: 'response.should be_redirect
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1289,6 +1332,7 @@ children:
   expansion: '${1:target}.should equal(${2:value})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1305,6 +1349,7 @@ children:
   expansion: '${1:target}.should have(${2:num}).${3:things}
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1321,6 +1366,7 @@ children:
   expansion: '${1:target}.should have_at_least(${2:num}).${3:things}
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1337,6 +1383,7 @@ children:
   expansion: '${1:target}.should have_at_most(${2:num}).${3:things}
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1353,6 +1400,7 @@ children:
   expansion: '${1:target}.should have(${2:x}).records
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1369,6 +1417,7 @@ children:
   expansion: '${1:target}.should match(/${2:regexp}/)
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1385,6 +1434,7 @@ children:
   expansion: '${1:target}.should_not == ${2:value}
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1401,6 +1451,7 @@ children:
   expansion: '${1:target}.should_not =~ /${2:regexp}/
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1417,6 +1468,7 @@ children:
   expansion: '${1:target}.should_not eql(${2:value})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1433,6 +1485,7 @@ children:
   expansion: '${1:target}.should_not be(${2:result})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1449,6 +1502,7 @@ children:
   expansion: '${1:target}.should_not be_a_kind_of(${2:klass})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1465,6 +1519,7 @@ children:
   expansion: '${1:target}.should_not be_instance_of(${2:klass})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1481,6 +1536,7 @@ children:
   expansion: '${1:target}.should_not be_close(${2:result}, ${3:tolerance})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1497,6 +1553,7 @@ children:
   expansion: 'response.should_not be_redirect
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1513,6 +1570,7 @@ children:
   expansion: '${1:target}.should_not equal(${2:value})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1529,6 +1587,7 @@ children:
   expansion: '${1:target}.should_not match(/${2:regexp}/)
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1545,6 +1604,7 @@ children:
   expansion: '${1:target}.should_not ${2:be_${3:predicate}} $4
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1561,6 +1621,7 @@ children:
   expansion: 'lambda { $1 }.should_not raise_error(${2:error})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1579,6 +1640,7 @@ children:
     $0
 
     '
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1595,6 +1657,7 @@ children:
   expansion: '${1:target}.should_not respond_to(:${2:sym})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1611,6 +1674,7 @@ children:
   expansion: '${1:target}.should_not satisfy { |obj| $2 }
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1627,6 +1691,7 @@ children:
   expansion: 'lambda { $1 }.should_not throw_symbol(:${2:symbol})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1643,6 +1708,7 @@ children:
   expansion: '${1:target}.should ${2:be_${3:predicate}} $4
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1659,6 +1725,7 @@ children:
   expansion: 'lambda { $1 }.should raise_error(${2:error})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1673,6 +1740,7 @@ children:
     prefix_values: [shr]
   displayName: should_receive
   expansion: ${1:mock}.should_receive(:${2:message})$3
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1687,6 +1755,7 @@ children:
     prefix_values: [wia]
   displayName: with args
   expansion: with(${1})$2
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1703,6 +1772,7 @@ children:
   expansion: 'response.should redirect_to(${1:url})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1719,6 +1789,7 @@ children:
   expansion: 'response.should render_template(:${1:template})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1735,6 +1806,7 @@ children:
   expansion: '${1:target}.should respond_to(:${2:sym})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1751,6 +1823,7 @@ children:
   expansion: '${1:target}.should satisfy { |obj| $2 }
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1767,6 +1840,7 @@ children:
   expansion: 'lambda { $1 }.should throw_symbol(:${2:symbol})
 
     $0'
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1781,6 +1855,7 @@ children:
     prefix_values: [stu]
   displayName: stub
   expansion: ${1:double}.stub(:${2:message})$3
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1795,6 +1870,7 @@ children:
     prefix_values: [aft]
   displayName: after
   expansion: "after(${1::each}) do\n  $0\nend"
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
@@ -1809,6 +1885,7 @@ children:
     prefix_values: [tw]
   displayName: twice
   expansion: twice
+  input: [none]
   inputPath: null
   keyBindingMap: null
   outputPath: null
