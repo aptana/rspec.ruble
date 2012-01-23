@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Save Example file and remember' do |cmd|
+command t(:save_example_file_and_remember) do |cmd|
   cmd.scope = 'source.ruby.rspec'
   cmd.trigger = :execution_listener, "org.eclipse.ui.file.save" # fires for save events only
   cmd.output = :none

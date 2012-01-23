@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Alternate File' do |cmd|
+command t(:alternate_file) do |cmd|
   cmd.key_binding = 'CONTROL+M2+ARROW_DOWN'
   cmd.scope = 'source.ruby, text.html.ruby'
   cmd.output = :show_as_tooltip

@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Single Example' do |cmd|
+command t(:run_single_example) do |cmd|
   cmd.key_binding = 'M1+M2+R'
   cmd.scope = 'source.ruby.rspec'
   cmd.output = :show_as_html

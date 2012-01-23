@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Last Examples file' do |cmd|
+command t(:run_last_examples_file) do |cmd|
   cmd.key_binding = 'OPTION+COMMAND+R'
   cmd.scope = 'source.ruby'
   cmd.output = :show_as_html
