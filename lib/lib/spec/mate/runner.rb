@@ -6,9 +6,9 @@ module Spec
   module Mate
     class Runner
       if RbConfig::CONFIG['target_os'] =~ /(win|w)32$/
-        SPEC_BIN = "spec"
+        SPEC_BIN = "rspec"
       else  
-        SPEC_BIN = %x{which spec}.chomp
+        SPEC_BIN = %x{which rspec}.chomp
       end
       
       def run_files(stdout, options={})
@@ -43,7 +43,7 @@ module Spec
           Ruble::Terminal.open("#{SPEC_BIN} #{argv}", project_directory)
           return
         end
-        argv += ENV['TM_RSPEC_OPTS'].split(" ") if ENV['TM_RSPEC_OPTS']
+        argv += (" " + ENV['TM_RSPEC_OPTS'].split(" ")) if ENV['TM_RSPEC_OPTS']
         Ruble::Terminal.open("#{SPEC_BIN} \"#{argv}\" #{lines if lines}", project_directory) 
       end
       
