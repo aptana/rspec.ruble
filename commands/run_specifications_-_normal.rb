@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Examples' do |cmd|
+command t(:run_examples) do |cmd|
   cmd.key_binding = 'M1+R'
   cmd.scope = 'source.ruby.rspec'
   cmd.input = :document, :document

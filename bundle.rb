@@ -3,12 +3,12 @@ require 'ruble'
 bundle do |bundle|
   bundle.author = 'Christopher Williams'
   bundle.copyright = "Copyright 2010 Aptana Inc. Distributed under the MIT license."
-  bundle.display_name = 'RSpec'
+  bundle.display_name = t(:bundle_name)
   bundle.description = "Ported from David Chelimsky's RSpec bundle for TextMate."
   bundle.repository= "git://github.com/aptana/rspec.ruble.git"
   bundle.file_types['source.ruby.rspec'] = "*spec.rb"
 
-  bundle.menu 'RSpec' do |main_menu|
+  bundle.menu t(:bundle_name) do |main_menu|
     #main_menu.command 'B40994F6-681A-458A-ACEC-3A5DC8F22ECA'
     #main_menu.separator
     #main_menu.command '1AEC727D-CE27-4A36-AD41-F76C843DAC2B'
@@ -16,13 +16,13 @@ bundle do |bundle|
     main_menu.command 'before'
     main_menu.command 'after'
     main_menu.separator
-    main_menu.command 'Run Single Example'
-    main_menu.command 'Run Examples'
+    main_menu.command t(:run_single_example)
+    main_menu.command t(:run_examples)
     #main_menu.command '5A91762E-213B-4F29-9F6B-147B7964313B'
-    main_menu.command 'Run Examples in selected files/directories'
+    main_menu.command t(:run_examples_in_selected_files)
     main_menu.separator
-    main_menu.menu 'Expectations' do |submenu|
-      submenu.menu 'General' do |general|
+    main_menu.menu t(:expectations) do |submenu|
+      submenu.menu t(:general) do |general|
         general.command 'should be'
         general.command 'should_not be'
         general.separator
@@ -40,7 +40,7 @@ bundle do |bundle|
         general.separator
         general.command 'should predicate'
       end
-      submenu.menu 'Class/Type' do |class_type|
+      submenu.menu t(:class_type) do |class_type|
         class_type.command 'should be_instance_of'
         class_type.command 'should_not be_instance_of'
         class_type.separator
@@ -50,14 +50,14 @@ bundle do |bundle|
         class_type.command 'should respond_to'
         class_type.command 'should_not respond_to'
       end
-      submenu.menu 'Procs' do |procs|
+      submenu.menu t(:procs) do |procs|
         procs.command 'should raise_error'
         procs.command 'should_not raise_error'
         procs.separator
         procs.command 'should throw'
         procs.command 'should_not throw'
       end
-      submenu.menu 'Collections' do |collections|
+      submenu.menu t(:collections) do |collections|
         #collections.command '3433F481-8F12-4FD6-9708-9BAAFFEF173A'
         #collections.command 'B08960C5-CA15-4AF6-A12A-2980CD44EA11'
         collections.separator
@@ -66,17 +66,17 @@ bundle do |bundle|
         collections.command 'should have_at_most'
       end
     end
-    main_menu.menu 'Mocks' do |mocks|
+    main_menu.menu t(:mocks) do |mocks|
       mocks.command 'mock'
       mocks.separator
-      mocks.menu 'Expectations' do |expectations|
+      mocks.menu t(:expectations) do |expectations|
         expectations.command 'should_receive'
         expectations.command 'should_not_receive'
         expectations.command 'with args'
         #expectations.command '35CED179-1676-4EAC-A901-83E25D6315B5'
         #expectations.command '4B60D57E-64A9-4B9C-B04E-FA1568408C9B'
       end
-      mocks.menu 'Receive Counts' do |receive|
+      mocks.menu t(:receive_counts) do |receive|
         receive.command 'once'
         receive.command 'twice'
         receive.command 'exactly'
@@ -90,7 +90,7 @@ bundle do |bundle|
         #receive.command '646FED40-CF07-404F-AD04-79B0EA49AFDF'
         receive.command 'any_number_of_times'
       end
-      mocks.menu 'Responses' do |responses|
+      mocks.menu t(:responses) do |responses|
         responses.command 'and_return with args'
         responses.command 'and_return with block'
         responses.command 'and_raise'
@@ -99,7 +99,7 @@ bundle do |bundle|
       end
     end
     main_menu.separator
-    main_menu.menu 'Rails Integration' do |rails|
+    main_menu.menu t(:rails_integration) do |rails|
       #rails.command 'A3628605-ACBC-4983-9DD6-1BD8272CD684'
       rails.command 'Require spec_helper'
       rails.separator
@@ -107,7 +107,7 @@ bundle do |bundle|
       rails.command 'describe (Controller)'
       rails.command 'describe (RESTful Controller)'
       rails.separator
-      rails.menu 'Expectations' do |rails_expect|
+      rails.menu t(:expectations) do |rails_expect|
         rails_expect.command 'should have_records'
         rails_expect.separator
         rails_expect.command 'should be_success'
@@ -138,8 +138,8 @@ bundle do |bundle|
     main_menu.command 'should_not predicate'
     main_menu.command 'mock_model'
     main_menu.command 'stub'
-    main_menu.command 'Save Example file and remember'
-    main_menu.command 'Run Last Examples file'
-    main_menu.command 'Alternate File'
+    main_menu.command t(:save_example_file_and_remember)
+    main_menu.command t(:run_last_examples_file)
+    main_menu.command t(:alternate_file)
   end
 end

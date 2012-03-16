@@ -1,6 +1,6 @@
 require 'ruble'
 
-command 'Run Examples in selected files/directories' do |cmd|
+command t(:run_examples_in_selected_files) do |cmd|
   cmd.key_binding = 'OPTION+COMMAND+R'
   cmd.scope = 'source.ruby.rspec'
   cmd.output = :show_as_html

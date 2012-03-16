@@ -1,0 +1,18 @@
+en:
+  bundle_name: 'RSpec'
+  run_single_example: 'Run Single Example'
+  run_examples: 'Run Examples'
+  run_examples_in_selected_files: 'Run Examples in selected files/directories'
+  expectations: 'Expectations'
+  general: 'General'
+  class_type: 'Class/Type'
+  procs: 'Procs'
+  collections: 'Collections'
+  mocks: 'Mocks'
+  receive_counts: 'Receive Counts'
+  responses: 'Responses'
+  rails_integration: 'Rails Integration'
+  save_example_file_and_remember: 'Save Example file and remember'
+  run_last_examples_file: 'Run Last Examples file'
+  alternate_file: 'Alternate File'
+  
